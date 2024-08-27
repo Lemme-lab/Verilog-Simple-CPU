@@ -1,34 +1,20 @@
-`include "Math_Unit_16Bit.v"
-`include "and16_16bit.v"
-`include "or_16bit.v"
-`include "divider_16bit_gate.v"
-`include "multiplier_16bit_gate.v"
-`include "mux6to1_16bit.v"
-
 module ALU_16Bit (
     input [15:0] a,
     input [15:0] b,
     input sub,
     input [2:0] op_select,  // 0 - Add, 1 - Subtract, 2 - AND, 3 - OR, 4 - Multiply, 5 - Divide
-    input load,             // Signal to load data into the register
-    input [2:0] reg_select, // Register select for loading data
-    output reg [15:0] result,  // Unified output
+    output [15:0] result,  // Unified output
     output cout,
     output overflow,
     output NO,
-    output ZO,
-    output [15:0] accumulator // Add accumulator output port
+    output ZO
 );
-    reg [15:0] register [0:5]; // 6x16-bit registers
-    reg [15:0] acc;            // Internal accumulator register
-
     wire [15:0] sum;
     wire [15:0] and_result_internal;
     wire [15:0] or_result_internal;
     wire [15:0] multiply_result;
     wire [15:0] divide_result;
     wire overflow_arithmetic;
-    wire [15:0] mux_result;     // Temporary wire to capture mux output
 
     // Instantiate Math_Unit_16Bit for addition and subtraction
     Math_Unit_16Bit math_unit (
@@ -79,41 +65,12 @@ module ALU_16Bit (
         .in4(multiply_result), // Multiplication result
         .in5(divide_result),   // Division result
         .sel(op_select),       // Operation select
-        .out(mux_result)       // Temporary wire for mux output
+        .out(result)           // Unified result output
     );
 
     // Overflow detection (only for addition and subtraction)
     assign overflow = (op_select == 3'b000 && overflow_arithmetic) || 
                       (op_select == 3'b001 && overflow_arithmetic);
 
-    // Register loading
-    always @(posedge load) begin
-        if (load) begin
-            register[reg_select] <= a;
-        end
-    end
-
-    // Accumulator logic
-    always @(*) begin
-        case (op_select)
-            3'b000: acc = register[0] + register[1]; // Addition example
-            3'b001: acc = register[0] - register[1]; // Subtraction example
-            default: acc = 16'h0000; // Default case
-        endcase
-    end
-
-    // Output result assignment
-    always @(*) begin
-        if (op_select == 3'b000 || op_select == 3'b001) begin
-            // For addition and subtraction, use the accumulator value
-            result = acc;
-        end else begin
-            // For other operations, use the mux result
-            result = mux_result;
-        end
-    end
-
-    // Assign accumulator to output
-    assign accumulator = acc;
-
 endmodule
+
