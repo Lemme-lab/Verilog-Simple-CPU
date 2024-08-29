@@ -4,6 +4,9 @@
 
 This project demonstrates a **Simple CPU** designed entirely in Verilog, starting from the most fundamental NAND gates and building up to a complete CPU. The design is available in both **8-bit** and **16-bit** architectures, showcasing how different lane widths affect CPU complexity and functionality. The project is inspired by the [TinyTapeout](https://tinytapeout.com/) initiative, which allows creators to design their own digital circuits and have them fabricated in real silicon.
 
+## View synthesized CPU
+https://gds-viewer.tinytapeout.com/?model=https://lemme-lab.github.io/Verilog-CPU/tinytapeout.gds.gltf
+
 ## Features
 
 - **Built from NAND gates**: The CPU is constructed using basic logic gates, illustrating how complex systems can emerge from simple components.
@@ -24,7 +27,7 @@ Both CPUs have the same architecture but differ in the bit-width of their data p
 - **Arithmetic Logic Unit (ALU)**: Performs arithmetic and logical operations based on the provided control signals.
 - **Control Unit**: Decodes instructions and generates control signals for the ALU, data registers, and output registers.
 
-![CPU Block Diagram](https://placehold.co/800x400?text=CPU+Block+Diagram)
+![image](https://github.com/user-attachments/assets/5486cc9f-efb0-47d6-b7a8-a5895b28ec19)
 
 # Control Unit Logic Table
 
