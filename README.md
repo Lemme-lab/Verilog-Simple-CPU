@@ -30,7 +30,9 @@ Both CPUs have the same architecture but differ in the bit-width of their data p
 - **Arithmetic Logic Unit (ALU)**: Performs arithmetic and logical operations based on the provided control signals.
 - **Control Unit**: Decodes instructions and generates control signals for the ALU, data registers, and output registers.
 
-![image](https://github.com/user-attachments/assets/5486cc9f-efb0-47d6-b7a8-a5895b28ec19)
+![image](https://github.com/user-attachments/assets/dabcff6b-7b06-4fda-8c02-a0a6973d9e05)
+![image](https://github.com/user-attachments/assets/59b12f67-a18b-4522-af43-122218f7af70)
+
 
 # Control Unit Logic Table
 
