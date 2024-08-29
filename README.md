@@ -1,11 +1,14 @@
 # **Simple CPU in Verilog**
 
+![image](https://github.com/user-attachments/assets/73fa615a-117e-4310-bf4c-5ecbdb8d7784)
+
 ## Overview
 
 This project demonstrates a **Simple CPU** designed entirely in Verilog, starting from the most fundamental NAND gates and building up to a complete CPU. The design is available in both **8-bit** and **16-bit** architectures, showcasing how different lane widths affect CPU complexity and functionality. The project is inspired by the [TinyTapeout](https://tinytapeout.com/) initiative, which allows creators to design their own digital circuits and have them fabricated in real silicon.
 
 ## View synthesized CPU
 https://gds-viewer.tinytapeout.com/?model=https://lemme-lab.github.io/Verilog-CPU/tinytapeout.gds.gltf
+![image](https://github.com/user-attachments/assets/1af35421-4eff-4719-ae23-c13788dd2b57)
 
 ## Features
 
