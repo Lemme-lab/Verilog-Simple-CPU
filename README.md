@@ -8,6 +8,7 @@ This project demonstrates a **Simple CPU** designed entirely in Verilog, startin
 
 ## View synthesized CPU
 https://gds-viewer.tinytapeout.com/?model=https://lemme-lab.github.io/Verilog-CPU/tinytapeout.gds.gltf
+
 ![image](https://github.com/user-attachments/assets/1af35421-4eff-4719-ae23-c13788dd2b57)
 ![image](https://github.com/user-attachments/assets/81138a63-310c-4a27-b186-1609a467003c)
 
